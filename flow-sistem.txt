@@ -1,0 +1,20 @@
+Rezky Maskapai — alur sistem (ringkas)
+
+Cara menjalankan di localhost (XAMPP):
+- Impor database: database/rezky_maskapai.sql lewat phpMyAdmin atau CLI MySQL.
+- config/database.php default: user root, password MySQL kosong (tanpa sandi, seperti XAMPP). Ubah hanya jika MySQL Anda memakai sandi.
+- Buka http://localhost/rezky/ di browser.
+
+Akun demo (semua sandi: password123):
+- Admin: admin@rezky.test (satu halaman masuk dengan penumpang; diarahkan ke panel admin)
+- Penumpang: user@rezky.test atau siti@rezky.test (tab Penumpang)
+
+1. Pengguna (penumpang) mendaftar atau masuk. Sesi menyimpan peran (user/admin).
+2. Penumpang membuka jadwal: sistem menampilkan penerbangan aktif yang sudah disiapkan admin (berangkat dari sekarang ke depan), dengan sisa kursi.
+3. Penumpang melihat detail penerbangan, memilih jumlah kursi, mengisi data tiap penumpang.
+4. Sistem membuat booking (kode unik), invoice/pembayaran dengan metode bayar yang dipilih (status pending), dan tiket (status inactive).
+5. Penumpang mentransfer sesuai total lalu mengunggah bukti (JPG/PNG/PDF, maks 2 MB). Status menjadi menunggu verifikasi.
+6. Admin membuka daftar transaksi, memeriksa file bukti, lalu menyetujui atau menolak.
+7. Jika disetujui: pembayaran approved, booking confirmed, tiket active — penumpang dapat mencetak e-ticket (halaman print / simpan PDF dari browser).
+8. Jika ditolak: pembayaran rejected, booking rejected, tiket cancelled — kursi kembali tersedia di daftar jadwal.
+9. Admin mengelola master data (bandara, maskapai, penerbangan), pengguna, dan status tiket lewat panel admin.

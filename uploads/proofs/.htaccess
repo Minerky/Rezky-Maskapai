@@ -1,0 +1,5 @@
+# Matikan eksekusi skrip di folder bukti pembayaran
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+Options -Indexes
